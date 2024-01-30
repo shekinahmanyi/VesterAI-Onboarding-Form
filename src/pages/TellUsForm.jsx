@@ -1,9 +1,17 @@
 import React from "react";
 // import vector from "../images/vector.jpg"
 // import startup from "../images/startup.jpg";
-// import connect from "../images/connect.jpg"
+import connect from "../images/connect-removebg-preview.png";
+// import { useNavigate } from "react-router-dom";
 
 const TellUsForm = () => {
+//   const navigate = useNavigate();
+//   const handleNextClick = () => {
+//     // You can perform any necessary logic here before navigating
+//     // For now, let's navigate to the next page
+//     navigate("./StartupForm.jsx"); 
+//   };
+
   const africanCountries = [
     "Algeria",
     "Angola",
@@ -75,9 +83,9 @@ const TellUsForm = () => {
             {/* Left side (background image) */}
             <div
               className="hidden sm:block md:w-3/5 lg:w-3/5 items-center justify-center bg-cover bg-center bg-blue border border-solid border-white rounded-l-3xl"
-            //   style={{
-            //     backgroundImage: `url(${connect})`,
-            //   }}
+              style={{
+                backgroundImage: `url(${connect})`,
+              }}
             >
               {/* Content inside the left side */}
             </div>
@@ -92,18 +100,14 @@ const TellUsForm = () => {
               <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                 <form className="space-y-6" action="#" method="POST">
                   <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium leading-6 text-gray-900"
-                    >
+                    <label className="block text-sm font-medium leading-6 text-gray-900">
                       What Industry Are You In?
                     </label>
                     <div className="mt-2">
                       <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        autoComplete="email"
+                        id=""
+                        name=""
+                        type=""
                         required
                         placeholder=" StartUp's Name"
                         className="block w-full rounded-md py-2 px-4 text-gray-900 bg-grayWhite focus:outline-none focus:ring focus:border-blue-300 sm:text-sm sm:leading-6"
@@ -163,6 +167,7 @@ const TellUsForm = () => {
                   <div>
                     <button
                       type="submit"
+                    //   onClick={handleNextClick}
                       className="flex w-full justify-center rounded-md bg-blue px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue mt-12"
                     >
                       Next
