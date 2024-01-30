@@ -1,7 +1,7 @@
 import React from "react";
 // import vector from "../images/vector.jpg"
 // import startup from "../images/startup.jpg";
-import connect from "../images/connect.jpg"
+// import connect from "../images/connect.jpg"
 
 const TellUsForm = () => {
   const africanCountries = [
@@ -71,19 +71,19 @@ const TellUsForm = () => {
         {/* Centered box */}
         <div className="flex items-center justify-center h-screen">
           {/* Content of the box */}
-          <div className="md:w-3/5 h-4/5 flex">
+          <div className="md:w-3/5 h-4/5 flex ">
             {/* Left side (background image) */}
             <div
-              className="hidden sm:block md:w-3/5 lg:w-3/5 items-center justify-center bg-cover bg-center bg-blue border border-solid border-white"
-              style={{
-                backgroundImage: `url(${connect})`,
-              }}
+              className="hidden sm:block md:w-3/5 lg:w-3/5 items-center justify-center bg-cover bg-center bg-blue border border-solid border-white rounded-l-3xl"
+            //   style={{
+            //     backgroundImage: `url(${connect})`,
+            //   }}
             >
               {/* Content inside the left side */}
             </div>
 
             {/* Right side (form) */}
-            <div className="bg-transparent sm:bg-white md:w-2/5 w-full items-center justify-center p-12">
+            <div className="bg-transparent sm:bg-white md:w-2/5 w-full items-center justify-center p-12 rounded-r-3xl">
               <h1 className="font-lato text-5xl md:text-8xl leading-tight tracking-normal text-left text-blue">
                 01
               </h1>
