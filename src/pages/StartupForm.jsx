@@ -26,7 +26,7 @@ const StartupForm = () => {
           {/* Right side (form) */}
           <div className="bg-transparent sm:bg-white md:w-2/5 w-full items-center justify-center p-12 rounded-r-3xl">
             <h1 className="font-lato text-5xl md:text-8xl leading-tight tracking-normal text-left text-blue">
-              01
+              02
             </h1>
             <p className="text-lg md:text-2xl">Tell us about your startup</p>
             {/* Form content */}

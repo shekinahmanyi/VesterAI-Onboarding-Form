@@ -2,16 +2,10 @@ import React from "react";
 // import vector from "../images/vector.jpg"
 // import startup from "../images/startup.jpg";
 import connect from "../images/connect-removebg-preview.png";
-// import { useNavigate } from "react-router-dom";
+// import { Navigate } from "react-router-dom";
 
 const TellUsForm = () => {
-//   const navigate = useNavigate();
-//   const handleNextClick = () => {
-//     // You can perform any necessary logic here before navigating
-//     // For now, let's navigate to the next page
-//     navigate("./StartupForm.jsx"); 
-//   };
-
+  
   const africanCountries = [
     "Algeria",
     "Angola",
@@ -98,7 +92,7 @@ const TellUsForm = () => {
               <p className="text-lg md:text-2xl">Tell us about your startup</p>
               {/* Form content */}
               <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                <form className="space-y-6" action="#" method="POST">
+                <form className="space-y-6" action="#" >
                   <div>
                     <label className="block text-sm font-medium leading-6 text-gray-900">
                       What Industry Are You In?
@@ -170,6 +164,7 @@ const TellUsForm = () => {
                     //   onClick={handleNextClick}
                       className="flex w-full justify-center rounded-md bg-blue px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue mt-12"
                     >
+                        
                       Next
                     </button>
                   </div>
