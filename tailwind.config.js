@@ -6,7 +6,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        nunito: ['Lato', 'sans-serif'],
+        lato: ['Lato', 'sans-serif'],
+      },
+      colors: {
+        lightBlue: '#F0F4F8',
+        blue:'#001BC8',
+        grayWhite: '#E7EAFF',
       },
     },
   },
