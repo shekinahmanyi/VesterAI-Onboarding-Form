@@ -1,9 +1,9 @@
-
+import TellUsForm from "./pages/TellUsForm";
 
 function App() {
   return (
     <div className="App">
-     <h1>Onboarding Form</h1>
+     <TellUsForm/>
     </div>
   );
 }
