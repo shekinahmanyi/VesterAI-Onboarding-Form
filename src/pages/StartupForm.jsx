@@ -37,7 +37,7 @@ const StartupForm = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     // Check if all required fields are filled
-    const requiredFields = ["industry", "technologies", "selectedDate"]; 
+    const requiredFields = ["industry", "technologies", "foundingDate"]; 
     const isFormValid = requiredFields.every((field) => formData[field]);
 
     if (!isFormValid) {
