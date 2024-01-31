@@ -78,15 +78,30 @@ const StartupForm = () => {
                       Where in Africa is your Company Legally registered?
                     </label>
                   </div>
+                  <div className="mt-2">
+                    <input
+                      id=""
+                      name=""
+                      type=""
+                      required
+                      placeholder=" Website"
+                      className="block w-full rounded-md py-2 px-4 text-gray-900 bg-grayWhite focus:outline-none focus:ring focus:border-blue-300 sm:text-sm sm:leading-6"
+                    />
                   </div>
-                
-
+                  </div>
+                  
                 <div>
+                <button
+                    type="submit"
+                    className="flex w-full justify-center rounded-md bg-blue px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
+                  >
+                    Back to 01
+                  </button>
                   <button
                     type="submit"
-                    className="flex w-full justify-center rounded-md bg-blue px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue mt-12"
+                    className="flex w-full justify-center rounded-md bg-blue px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue mt-4"
                   >
-                    Next
+                    Submit
                   </button>
                 </div>
               </form>
