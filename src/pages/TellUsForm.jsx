@@ -4,9 +4,11 @@ import React from "react";
 import connect from "../images/connect-removebg-preview.png";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../components/FormContext";
+import { useCountrySelect } from "../components/CountrySelectContext";
 
 const TellUsForm = () => {
   const { formData, dispatch } = useForm();
+  const { selectedCountry, onCountryChange } = useCountrySelect();
   const handleInputChange = (field, value) => {
     dispatch({ type: "UPDATE_FIELD", field, value });
   };
@@ -132,6 +134,10 @@ const TellUsForm = () => {
                         type=""
                         required
                         placeholder=" Website"
+                        value={formData.Website || ""}
+                        onChange={(e) =>
+                          handleInputChange("Website", e.target.value)
+                        }
                         className="block w-full rounded-md py-2 px-4 text-gray-900 bg-grayWhite focus:outline-none focus:ring focus:border-blue-300 sm:text-sm sm:leading-6"
                       />
                     </div>
@@ -150,6 +156,8 @@ const TellUsForm = () => {
                       <select
                         id="country"
                         name="country"
+                        value={selectedCountry}
+                        onChange={onCountryChange}
                         required
                         className="block w-full rounded-md py-2 px-4 text-gray-900 bg-grayWhite focus:outline-none focus:ring focus:border-blue-300 sm:text-sm sm:leading-6"
                       >
