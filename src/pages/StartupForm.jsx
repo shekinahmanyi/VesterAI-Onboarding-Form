@@ -7,6 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "../components/FormContext";
 import { useCountrySelect } from "../components/CountrySelectContext";
 import { FaArrowLeft } from "react-icons/fa";
+import Select from "react-select";
 
 const StartupForm = () => {
   const { formData, dispatch } = useForm();
@@ -19,9 +20,31 @@ const StartupForm = () => {
   // eslint-disable-next-line no-unused-vars
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const { selectedCountry, onCountryChange, resetCountry } = useCountrySelect();
+   const [formError, setFormError] = useState(null);
+
+  const technologyOptions = [
+    { value: "JavaScript", label: "JavaScript" },
+    { value: "Python", label: "Python" },
+    { value: "React", label: "React" },
+    // Add more options as needed
+  ];
+
+  const handleTechnologyChange = (selectedOptions) => {
+    const selectedTechnologies = selectedOptions.map((option) => option.value);
+    handleInputChange("technologies", selectedTechnologies);
+  };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    // Check if all required fields are filled
+    const requiredFields = ["industry", "technologies", "foundingDate"]; 
+    const isFormValid = requiredFields.every((field) => formData[field]);
+
+    if (!isFormValid) {
+      // If any required field is empty, don't submit the form
+      setFormError("Please fill in all required fields!!");
+      return;
+    }
 
     setFormSubmitted(true);
     setModalIsOpen(true);
@@ -32,9 +55,8 @@ const StartupForm = () => {
     // Clear form data (optional, depends on your use case)
     dispatch({ type: "RESET_FORM" });
     // Redirect the user to the home page
-    resetCountry(); 
-  navigate("/");
-  
+    resetCountry();
+    navigate("/");
   };
 
   return (
@@ -69,23 +91,37 @@ const StartupForm = () => {
                 <form className="space-y-6" action="#" method="POST">
                   <div>
                     <label
-                      htmlFor="name"
+                      htmlFor="industry"
                       className="block text-sm font-medium leading-6 text-gray-900"
                     >
                       What Industry Is Your Business?
                     </label>
                     <div className="mt-2">
-                      <input
-                        id="name"
-                        name="name"
+                      <select
+                        id="industry"
+                        name="industry"
                         required
-                        placeholder="e.g Information Technology"
-                        value={formData.Information || ""}
+                        value={formData.industry || ""}
                         onChange={(e) =>
-                          handleInputChange("Information", e.target.value)
+                          handleInputChange("industry", e.target.value)
                         }
                         className="block w-full rounded-md py-2 px-4 text-gray-900 bg-grayWhite focus:outline-none focus:ring focus:border-blue-300 sm:text-sm sm:leading-6"
-                      />
+                      >
+                        <option value="" disabled>
+                          Select an industry
+                        </option>
+                        <option value="it">Information Technology</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="finance">Finance</option>
+                        <option value="manufacturing">Manufacturing</option>
+                        <option value="retail">Retail</option>
+                        <option value="education">Education</option>
+                        <option value="real-estate">Real Estate</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="hospitality">Hospitality</option>
+                        <option value="agriculture">Agriculture</option>
+                        {/* Add more industry options as needed */}
+                      </select>
                     </div>
                   </div>
 
@@ -98,16 +134,18 @@ const StartupForm = () => {
                         What Technology does your company use?
                       </label>
                     </div>
-                    <div className="mt-2">
-                      <input
-                        id="technology"
-                        name="technology"
-                        required
-                        placeholder="e.g JavaScript"
-                        value={formData.technology || ""}
-                        onChange={(e) =>
-                          handleInputChange("technology", e.target.value)
+                    <div className="mt-2  border-0">
+                      <Select
+                        isMulti
+                        options={technologyOptions}
+                        value={
+                          Array.isArray(formData.technologies)
+                            ? technologyOptions.filter((option) =>
+                                formData.technologies.includes(option.value)
+                              )
+                            : []
                         }
+                        onChange={handleTechnologyChange}
                         className="block w-full rounded-md py-2 px-4 text-gray-900 bg-grayWhite focus:outline-none focus:ring focus:border-blue-300 sm:text-sm sm:leading-6"
                       />
                     </div>
@@ -150,7 +188,6 @@ const StartupForm = () => {
                       <FaArrowLeft />
                       Back
                     </button>
-
                     <button
                       type="submit"
                       onClick={handleFormSubmit}
@@ -158,8 +195,10 @@ const StartupForm = () => {
                     >
                       Submit
                     </button>
+                    <div className="text-red-500 text-sm mt-2 items-center font-semibold">{formError}</div>
                   </div>
                 </form>
+               
               </div>
             </div>
           </div>
@@ -183,6 +222,7 @@ const StartupForm = () => {
           </div>
         </div>
       )}
+      
     </div>
   );
 };
