@@ -37,7 +37,7 @@ const StartupForm = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     // Check if all required fields are filled
-    const requiredFields = ["industry", "technologies", "foundingDate"]; 
+    const requiredFields = ["industry", "technologies", "selectedDate"]; 
     const isFormValid = requiredFields.every((field) => formData[field]);
 
     if (!isFormValid) {
@@ -52,7 +52,6 @@ const StartupForm = () => {
   const closeModal = () => {
     setModalIsOpen(false);
     setFormSubmitted(false); // Reset the form submission state
-    // Clear form data (optional, depends on your use case)
     dispatch({ type: "RESET_FORM" });
     // Redirect the user to the home page
     resetCountry();
@@ -120,7 +119,7 @@ const StartupForm = () => {
                         <option value="entertainment">Entertainment</option>
                         <option value="hospitality">Hospitality</option>
                         <option value="agriculture">Agriculture</option>
-                        {/* Add more industry options as needed */}
+                       
                       </select>
                     </div>
                   </div>
@@ -168,7 +167,7 @@ const StartupForm = () => {
                         selected={selectedDate}
                         onChange={(date) => {
                           setSelectedDate(date);
-                          handleInputChange("foundingDate", date); // Update your form data with the selected date
+                          handleInputChange("foundingDate", date); 
                         }}
                         placeholderText="Select Date"
                         className="block w-full rounded-md py-2 px-4 text-gray-900 bg-grayWhite focus:outline-none focus:ring focus:border-blue-300 sm:text-sm sm:leading-6"
