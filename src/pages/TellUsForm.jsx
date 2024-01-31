@@ -1,7 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-// import vector from "../images/vector.jpg"
-// import startup from "../images/startup.jpg";
 import connect from "../images/connect-removebg-preview.png";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../components/FormContext";
@@ -99,7 +97,7 @@ const TellUsForm = () => {
       navigate("/step2");
       
     } else {
-      // Display a message to the user or handle errors
+      //  handle errors
       console.log("Please fill in all required fields");
     }
   };
