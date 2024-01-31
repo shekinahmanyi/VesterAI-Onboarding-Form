@@ -1,7 +1,8 @@
 # VesterAI - Startup Onboarding Form
 
-![Design preview for the onboarding Form](./src/images/Preview.png)
+![Design preview for the onboarding Form Page 1](./src/images/Preview.png)
 
+![Design preview for the onboarding Form Page 2](./src/images/preview2.png)
 ## Welcome! 👋
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
