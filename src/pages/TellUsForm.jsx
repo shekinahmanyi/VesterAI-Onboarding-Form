@@ -99,14 +99,13 @@ const TellUsForm = () => {
               <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                 <form className="space-y-6" action="#">
                   <div>
-                    <label className="block text-sm font-medium leading-6 text-gray-900">
+                    <label  htmlFor="name" className="block text-sm font-medium leading-6 text-gray-900">
                       What Industry Are You In?
                     </label>
                     <div className="mt-2">
                       <input
-                        id=""
-                        name=""
-                        type=""
+                        id="name"
+                        name="name"
                         required
                         placeholder=" StartUp's Name"
                         value={formData.startupName || ""}
@@ -121,7 +120,7 @@ const TellUsForm = () => {
                   <div>
                     <div className="flex items-center justify-between">
                       <label
-                        htmlFor="password"
+                        htmlFor="website"
                         className="block text-sm font-medium leading-6 text-gray-900"
                       >
                         Startup's Website
@@ -129,9 +128,8 @@ const TellUsForm = () => {
                     </div>
                     <div className="mt-2">
                       <input
-                        id=""
-                        name=""
-                        type=""
+                        id="website"
+                        name="website"
                         required
                         placeholder=" Website"
                         value={formData.Website || ""}
@@ -146,7 +144,7 @@ const TellUsForm = () => {
                   <div>
                     <div className="flex items-center justify-between">
                       <label
-                        htmlFor="password"
+                        htmlFor="country"
                         className="block text-sm font-medium leading-6 text-gray-900"
                       >
                         Where in Africa is your Company Legally registered?
