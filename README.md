@@ -28,8 +28,8 @@ Form Page 2:
 select all that apply)
 - When was your company founded? (date selection)
 
-## Deploying Project 
-This Project was deployed on Vercel and you can access it here :https://vesterai-onboarding-form.vercel.app/
+## Test The Solution 
+This Project was built with ❤ by Shekinah Manyi and deployed on Vercel and you can access it here :https://vesterai-onboarding-form.vercel.app/ to test all Functionalities and the Solution in General
 
 ## ProJect SetUp
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -37,8 +37,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 The styling used for this Project is [TailwindCSS](https://tailwindcss.com/docs/installation)
 
 Before you get started with the project, ensure you have node installed on your Machine!
-Download the node modules after you cloning the project by using the command [npm Install]
-
+Download the node modules after you cloning the project by using the command `npm install`
 ## Available Scripts
 
 In the project directory, you can run:
