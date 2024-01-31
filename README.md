@@ -1,14 +1,37 @@
-# VesterAI - Startup Onboarding Form
+# VesterAI - Startup Onboarding Form Page One
 
 ![Design preview for the onboarding Form Page 1](./src/images/Preview.png)
+
+# VesterAI - Startup Onboarding Form Page 2
 
 ![Design preview for the onboarding Form Page 2](./src/images/preview2.png)
 ## Welcome! 👋
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This Project is a Technical Assessment for the position of a Full Stack Developer (FrontEnd Specialist) role.
+This assessment aims to evaluate my design and UX skills in developing a user-friendly and visually
+appealing 2-page form for onboarding startups on the Vester.AI platform (a startup assessment tool).
+Please read the instructions below carefully and complete the tasks within the specified time frame.
 
-## Deployed Project 
+## Instructions: 
+
+I am required to design a simple 2-page form for onboarding startups onto the
+Vester.AI platform. The form should include the following questions:
+
+Form Page 1:
+● What is your startup's name?
+● What is your startup's website?
+● Where in Africa is your company legally registered?
+
+Form Page 2:
+● Which of these best describes your industry? (provide dropdown)
+● What technology does your company mainly use? (provide dropdown and ability to
+select all that apply)
+● When was your company founded? (date selection)
+
+## Deploying Project 
 This Project was deployed on Vercel and you can access it here :https://vesterai-onboarding-form.vercel.app/
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
