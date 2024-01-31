@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { FormProvider } from './components/FormContext';
+import { CountrySelectProvider } from './components/CountrySelectContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <FormProvider>
+      <CountrySelectProvider>
       <App />
+      </CountrySelectProvider>
     </FormProvider>
   </React.StrictMode>
 );
