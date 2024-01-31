@@ -29,7 +29,7 @@ select all that apply)
 - When was your company founded? (date selection)
 
 ## Test The Solution 
-This Project was built with ❤ by Shekinah Manyi and deployed on Vercel and you can access it here :https://vesterai-onboarding-form.vercel.app/ to test all Functionalities and the Solution in General
+This Project was built with ❤ by Shekinah Manyi and deployed on Vercel and you can access it here :(https://vesterai-onboarding-form.vercel.app/) to test all Functionalities and the Solution in General
 
 ## ProJect SetUp
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
