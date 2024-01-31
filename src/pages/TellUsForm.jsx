@@ -2,12 +2,15 @@ import React from "react";
 // import vector from "../images/vector.jpg"
 // import startup from "../images/startup.jpg";
 import connect from "../images/connect-removebg-preview.png";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
+import { useForm } from "../components/FormContext";
 
 const TellUsForm = () => {
-
-    const navigate = useNavigate();
+  const { formData, dispatch } = useForm();
+  const handleInputChange = (field, value) => {
+    dispatch({ type: "UPDATE_FIELD", field, value });
+  };
+  const navigate = useNavigate();
 
   const africanCountries = [
     "Algeria",
@@ -66,7 +69,6 @@ const TellUsForm = () => {
     "Zimbabwe",
   ];
 
-
   return (
     <div className="flex bg-lightBlue h-screen">
       {/* Background image container */}
@@ -105,6 +107,10 @@ const TellUsForm = () => {
                         type=""
                         required
                         placeholder=" StartUp's Name"
+                        value={formData.startupName || ""}
+                        onChange={(e) =>
+                          handleInputChange("startupName", e.target.value)
+                        }
                         className="block w-full rounded-md py-2 px-4 text-gray-900 bg-grayWhite focus:outline-none focus:ring focus:border-blue-300 sm:text-sm sm:leading-6"
                       />
                     </div>
