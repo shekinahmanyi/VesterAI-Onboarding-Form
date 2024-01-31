@@ -2,10 +2,13 @@ import React from "react";
 // import vector from "../images/vector.jpg"
 // import startup from "../images/startup.jpg";
 import connect from "../images/connect-removebg-preview.png";
-// import { Navigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+
 
 const TellUsForm = () => {
-  
+
+    const navigate = useNavigate();
+
   const africanCountries = [
     "Algeria",
     "Angola",
@@ -63,12 +66,11 @@ const TellUsForm = () => {
     "Zimbabwe",
   ];
 
+
   return (
     <div className="flex bg-lightBlue h-screen">
       {/* Background image container */}
-      <div
-        className="flex-1 bg-cover bg-center"
-      >
+      <div className="flex-1 bg-cover bg-center">
         {/* Centered box */}
         <div className="flex items-center justify-center h-screen">
           {/* Content of the box */}
@@ -91,7 +93,7 @@ const TellUsForm = () => {
               <p className="text-lg md:text-2xl">Tell us about your startup</p>
               {/* Form content */}
               <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                <form className="space-y-6" action="#" >
+                <form className="space-y-6" action="#">
                   <div>
                     <label className="block text-sm font-medium leading-6 text-gray-900">
                       What Industry Are You In?
@@ -160,10 +162,11 @@ const TellUsForm = () => {
                   <div>
                     <button
                       type="submit"
-                    //   onClick={handleNextClick}
+                      onClick={() => {
+                        navigate("./step2");
+                      }}
                       className="flex w-full justify-center rounded-md bg-blue px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue mt-12"
                     >
-                        
                       Next
                     </button>
                   </div>
