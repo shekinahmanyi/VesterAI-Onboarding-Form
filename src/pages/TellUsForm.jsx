@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 // import vector from "../images/vector.jpg"
 // import startup from "../images/startup.jpg";
@@ -96,6 +97,7 @@ const TellUsForm = () => {
     if (validateForm()) {
       // Proceed to the next step
       navigate("/step2");
+      
     } else {
       // Display a message to the user or handle errors
       console.log("Please fill in all required fields");

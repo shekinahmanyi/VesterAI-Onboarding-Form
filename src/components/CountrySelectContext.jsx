@@ -1,4 +1,3 @@
-// CountrySelectContext.js
 import React, { createContext, useContext, useState } from 'react';
 
 const CountrySelectContext = createContext();
@@ -12,8 +11,12 @@ export const CountrySelectProvider = ({ children }) => {
     setSelectedCountry(event.target.value);
   };
 
+  const resetCountry = () => {
+    setSelectedCountry('');
+  };
+
   return (
-    <CountrySelectContext.Provider value={{ selectedCountry, onCountryChange }}>
+    <CountrySelectContext.Provider value={{ selectedCountry, onCountryChange, resetCountry }}>
       {children}
     </CountrySelectContext.Provider>
   );

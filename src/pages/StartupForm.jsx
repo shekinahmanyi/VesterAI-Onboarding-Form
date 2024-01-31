@@ -1,18 +1,12 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import connect from "../images/connect-removebg-preview.png";
 import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "../components/FormContext";
-// import { IoIosCalendar } from "react-icons/io";
-// import {FaCalendar} from 'react-icons/fa'
+import { useCountrySelect } from "../components/CountrySelectContext";
 import { FaArrowLeft } from "react-icons/fa";
-
-// const CalendarIcon = () => (
-//   <span className=" inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-//     <FaCalendar className="h-6 w-6 text-gray-500" />
-//   </span>
-// );
 
 const StartupForm = () => {
   const { formData, dispatch } = useForm();
@@ -21,6 +15,27 @@ const StartupForm = () => {
   };
   const navigate = useNavigate();
   const [selectedDate, setSelectedDate] = useState(null);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  // eslint-disable-next-line no-unused-vars
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const { selectedCountry, onCountryChange, resetCountry } = useCountrySelect();
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    setFormSubmitted(true);
+    setModalIsOpen(true);
+  };
+  const closeModal = () => {
+    setModalIsOpen(false);
+    setFormSubmitted(false); // Reset the form submission state
+    // Clear form data (optional, depends on your use case)
+    dispatch({ type: "RESET_FORM" });
+    // Redirect the user to the home page
+    resetCountry(); 
+  navigate("/");
+  
+  };
 
   return (
     <div className="flex bg-lightBlue h-screen">
@@ -111,6 +126,7 @@ const StartupForm = () => {
                       <DatePicker
                         id="date"
                         name="date"
+                        required
                         selected={selectedDate}
                         onChange={(date) => {
                           setSelectedDate(date);
@@ -131,11 +147,13 @@ const StartupForm = () => {
                       }}
                       className="flex w-1/2 justify-center items-center rounded-md bg-blue px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
                     >
-                      <FaArrowLeft /> 
+                      <FaArrowLeft />
                       Back
                     </button>
+
                     <button
                       type="submit"
+                      onClick={handleFormSubmit}
                       className="flex w-full justify-center rounded-md bg-blue px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue mt-16"
                     >
                       Submit
@@ -147,6 +165,24 @@ const StartupForm = () => {
           </div>
         </div>
       </div>
+      {/* IF Form is submitted successfully, Display the card */}
+      {formSubmitted && (
+        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75">
+          <div className="bg-white p-8 rounded-md text-center">
+            <h2 className="text-2xl font-bold mb-4">Successful Completion!</h2>
+            <p className="text-gray-700">
+              We will be in touch soon. Your information has been submitted
+              successfully!
+            </p>
+            <button
+              onClick={closeModal}
+              className="mt-4 px-4 py-2 bg-blue text-white rounded-md"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

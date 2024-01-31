@@ -1,6 +1,18 @@
-import { createContext, useContext, useReducer } from 'react';
+// FormContext.js
+
+import React, { createContext, useReducer, useContext } from 'react';
 
 const FormContext = createContext();
+
+const initialState = {
+  // Initial Data
+  startupName: '',
+  Website: '',
+  Information:'',
+  technology:'',
+  selectedCountry:'',
+  selectedDate:null,
+};
 
 const formReducer = (state, action) => {
   switch (action.type) {
@@ -9,13 +21,15 @@ const formReducer = (state, action) => {
         ...state,
         [action.field]: action.value,
       };
+    case 'RESET_FORM':
+      return initialState;
     default:
       return state;
   }
 };
 
 const FormProvider = ({ children }) => {
-  const [formData, dispatch] = useReducer(formReducer, {});
+  const [formData, dispatch] = useReducer(formReducer, initialState);
 
   return (
     <FormContext.Provider value={{ formData, dispatch }}>
