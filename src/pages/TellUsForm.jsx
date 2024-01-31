@@ -68,7 +68,6 @@ const TellUsForm = () => {
       {/* Background image container */}
       <div
         className="flex-1 bg-cover bg-center"
-        style={{ backgroundImage: 'url("path/to/your/background-image.jpg")' }}
       >
         {/* Centered box */}
         <div className="flex items-center justify-center h-screen">
@@ -76,7 +75,7 @@ const TellUsForm = () => {
           <div className="md:w-3/5 h-4/5 flex ">
             {/* Left side (background image) */}
             <div
-              className="hidden sm:block md:w-3/5 lg:w-3/5 items-center justify-center bg-cover bg-center bg-blue border border-solid border-white rounded-l-3xl"
+              className="hidden sm:block md:w-3/5 lg:w-3/5 items-center justify-center bg-cover bg-center bg-blue border  border-lightBlue rounded-l-3xl"
               style={{
                 backgroundImage: `url(${connect})`,
               }}
