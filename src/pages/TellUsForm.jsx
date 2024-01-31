@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import vector from "../images/vector.jpg"
 // import startup from "../images/startup.jpg";
 import connect from "../images/connect-removebg-preview.png";
@@ -7,6 +7,7 @@ import { useForm } from "../components/FormContext";
 import { useCountrySelect } from "../components/CountrySelectContext";
 
 const TellUsForm = () => {
+  const [errors, setErrors] = useState({});
   const { formData, dispatch } = useForm();
   const { selectedCountry, onCountryChange } = useCountrySelect();
   const handleInputChange = (field, value) => {
@@ -71,6 +72,36 @@ const TellUsForm = () => {
     "Zimbabwe",
   ];
 
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.startupName) {
+      newErrors.startupName = "Startup's Name is required";
+    }
+
+    if (!formData.Website) {
+      newErrors.Website = "Website is required";
+    }
+
+    if (!selectedCountry) {
+      newErrors.selectedCountry = "Country is required";
+    }
+
+    setErrors(newErrors);
+
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleNextClick = () => {
+    if (validateForm()) {
+      // Proceed to the next step
+      navigate("/step2");
+    } else {
+      // Display a message to the user or handle errors
+      console.log("Please fill in all required fields");
+    }
+  };
+
   return (
     <div className="flex bg-lightBlue h-screen">
       {/* Background image container */}
@@ -94,12 +125,15 @@ const TellUsForm = () => {
               <h1 className="font-lato text-5xl md:text-8xl leading-tight tracking-normal text-left text-blue">
                 01
               </h1>
-              <p className="text-lg md:text-2xl">Tell us about your startup</p>
+              <p className="text-lg md:text-2xl">Tell Us About Your Startup</p>
               {/* Form content */}
               <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                 <form className="space-y-6" action="#">
                   <div>
-                    <label  htmlFor="name" className="block text-sm font-medium leading-6 text-gray-900">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium leading-6 text-gray-900"
+                    >
                       What Industry Are You In?
                     </label>
                     <div className="mt-2">
@@ -174,10 +208,8 @@ const TellUsForm = () => {
                   <div>
                     <button
                       type="submit"
-                      onClick={() => {
-                        navigate("/step2");
-                      }}
                       className="flex w-full justify-center rounded-md bg-blue px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue mt-12"
+                      onClick={handleNextClick}
                     >
                       Next
                     </button>

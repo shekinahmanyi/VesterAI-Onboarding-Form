@@ -48,7 +48,7 @@ const StartupForm = () => {
               <h1 className="font-lato text-5xl md:text-8xl leading-tight tracking-normal text-left text-blue">
                 02
               </h1>
-              <p className="text-lg md:text-2xl">Your startup</p>
+              <p className="text-lg md:text-2xl">Your Startup</p>
               {/* Form content */}
               <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                 <form className="space-y-6" action="#" method="POST">
