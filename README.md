@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+# VesterAI - Startup Onboarding Form
+
+![Design preview for the onboarding Form](./src/images/Preview.png)
+
+## Welcome! 👋
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Deployed Project 
+This Project was deployed on Vercel and you can access it here :https://vesterai-onboarding-form.vercel.app/
 
 ## Available Scripts
 
