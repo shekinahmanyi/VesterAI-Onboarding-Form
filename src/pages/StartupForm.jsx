@@ -1,7 +1,9 @@
 import React from 'react'
 import connect from "../images/connect-removebg-preview.png"
+import { useNavigate } from 'react-router-dom';
 
 const StartupForm = () => {
+    const navigate = useNavigate();
   return (
     <div className="flex bg-lightBlue h-screen">
     {/* Background image container */}
@@ -93,6 +95,9 @@ const StartupForm = () => {
                 <div>
                 <button
                     type="submit"
+                    onClick={() => {
+                        navigate("/");
+                      }}
                     className="flex w-full justify-center rounded-md bg-blue px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue"
                   >
                     Back to 01
